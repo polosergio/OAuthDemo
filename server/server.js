@@ -26,6 +26,7 @@ app.get('/oauth', function (req, res) {
 			var token_info = JSON.parse(body);
 			if (token_info.access_token) {
 				req.session.token = token_info.access_token;
+				req.session.save();
 				console.log(req.session);
 			}
 		});
