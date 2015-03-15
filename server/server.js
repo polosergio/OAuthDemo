@@ -27,7 +27,6 @@ app.get('/oauth', function (req, res) {
 			if (token_info.access_token) {
 				req.session.token = token_info.access_token;
 				req.session.save();
-				console.log(req.session);
 			}
 		});
 	}
@@ -35,7 +34,6 @@ app.get('/oauth', function (req, res) {
 });
 
 app.get('/client_info', function (req, res) {
-	console.log(req.session);
 	res.send({
 		code: req.session.code,
 		token: req.session.token,
